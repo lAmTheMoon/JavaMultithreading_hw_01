@@ -48,7 +48,7 @@ public class MultithreadingMain {
         ForkJoinPool pool = new ForkJoinPool();
         int middle = list.size() / 2;
         ArrayAverageTask task1 = new ArrayAverageTask(list.subList(0, middle));
-        ArrayAverageTask task2 = new ArrayAverageTask(list.subList(middle+1, list.size()));
+        ArrayAverageTask task2 = new ArrayAverageTask(list.subList(middle, list.size()));
 
         List<ArrayAverageTask> taskList = List.of(task1, task2);
         List<Future<Double>> future = pool.invokeAll(taskList);
